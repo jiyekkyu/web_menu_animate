@@ -1,0 +1,175 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-weight: 300;
+	overflow: hidden;
+	transform-style: preserve-3d;
+}
+input[type='radio'] {
+	display: none;
+	transition: display 0s;
+}
+input[type='radio']:checked + section {
+	top: 0;
+}
+.container {
+	width: 100%;
+	height: 100vh;
+	transition: all 0.5s;
+	transform-style: preserve-3d;
+	display: inline;
+}
+.container section {
+	position: absolute;
+	top: 100vh;
+	width: 100%;
+	height: 100vh;
+	transition: top 0.5s;
+	transform-style: preserve-3d;
+}
+.container section h1 {
+	margin: 0;
+	font-size: 64px;
+	transform: translate(0, 40vh);
+	text-align: center;
+	color: rgba(255,255,255,0.85);
+	transition: transform 0.5s;
+	transform-style: preserve-3d;
+}
+.container section label {
+	display: block;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100vh;
+}
+.menu {
+	display: block;
+	position: fixed;
+	top: 20px;
+	left: 25px;
+	z-index: 1000;
+	transform: 0deg;
+	transition: all 0.5s;
+	width: 35px;
+	height: 4px;
+	background: rgba(0,0,0,0.25);
+}
+.menu::before,
+.menu::after {
+	content: '';
+	display: block;
+	position: absolute;
+	width: 35px;
+	height: 4px;
+	background: rgba(0,0,0,0.25);
+	transition: all 0.5s;
+}
+.menu::before {
+	top: 10px;
+}
+.menu::after {
+	top: 20px;
+}
+.menu:hover {
+	background: #fff;
+}
+.menu:hover::before,
+.menu:hover::after {
+	background: #fff;
+}
+.menu div,
+.menu div label:nth-child(1) {
+	display: block;
+	width: 35px;
+	height: 35px;
+	position: absolute;
+	top: -6px;
+}
+.menu div label:nth-child(2) {
+	display: none;
+}
+#menu:checked + .container {
+	transform: scale(0.65) translateY(-18%);
+	transition: all 0.5s;
+	transform-style: preserve-3d;
+	display: block;
+}
+#menu:checked + .container section {
+	cursor: pointer;
+	overflow: hidden;
+	opacity: 1;
+	box-shadow: 0 0 40px rgba(0,0,0,0.25);
+	transform-style: preserve-3d !important;
+}
+#menu:checked + .container h1 {
+	transform: scale(0.5) !important;
+	transform-style: preserve-3d !important;
+}
+#menu:checked + .container + .menu {
+	top: 30px;
+	left: 20px;
+	transform: rotate(225deg);
+	transition: all 0.5s;
+	transform-origin: center center;
+	background: #646464;
+}
+#menu:checked + .container + .menu::before {
+	opacity: 0;
+	transform: translateX(-20px);
+}
+#menu:checked + .container + .menu::after {
+	margin-top: -20px;
+	transform: rotate(90deg);
+	background: #646464;
+}
+#menu:checked + .container + .menu label:nth-child(2) {
+	display: block !important;
+	width: 35px;
+	height: 35px;
+	position: absolute;
+	top: -6px;
+}
+#menu:checked + .container + .menu div label:nth-child(1) {
+  display: none;
+}
+.container .home {
+	z-index: 99;
+	background-color: #c8b5ff;
+}
+.container .about {
+	z-index: 98;
+	background-color: #ffafaf;
+}
+.container .work {
+	z-index: 97;
+	background-color: #91ef8b;
+}
+.container .contact {
+	z-index: 96;
+	background-color: #b3d1ff;
+}
+#menu:checked + .container .home {
+	top: 252px !important;
+}
+#menu:checked + .container .home:hover {
+	top: 248px !important;
+}
+#menu:checked + .container .about {
+	top: 172px !important;
+}
+#menu:checked + .container .about:hover {
+	top: 168px !important;
+}
+#menu:checked + .container .work {
+	top: 92px !important;
+}
+#menu:checked + .container .work:hover {
+	top: 88px !important;
+}
+#menu:checked + .container .contact {
+	top: 12px !important;
+}
+#menu:checked + .container .contact:hover {
+	top: 8px !important;
+}
