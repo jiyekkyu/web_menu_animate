@@ -1,3 +1,5 @@
 module.exports = {
-  lintOnSave: false,
+	lintOnSave: true,
+	publicPath: '/web_menu_animate',
+	outputDir: path.resolve(__dirname,'./docs'),
 };
