@@ -57,5 +57,3 @@ export default {
   },
 };
 </script>
-
-<style src="@/css/animate.css"></style>
